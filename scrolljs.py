@@ -1,0 +1,11 @@
+from selenium import webdriver
+noheadmode = webdriver.ChromeOptions()
+noheadmode.add_argument("headless")
+noheadmode.add_argument("--ignore-certificate-errors")
+driver = webdriver.Chrome(options=noheadmode)
+driver.implicitly_wait(3)
+driver.get("https://rahulshettyacademy.com/AutomationPractice/")
+driver.maximize_window()
+#driver.execute_script("window.scrollBy(0,document.body.scrollHeight);")
+driver.execute_script("window.scrollBy(0,500);")
+driver.get_screenshot_as_file("ss1.png")
